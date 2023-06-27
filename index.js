@@ -36,22 +36,57 @@ const pool = new Pool ({
 
 // create 'order_items' table
 
-pool.query(
-    // "INSERT INTO customers (name, email, phone_number) VALUES ('Canelo Alvares', 'alvares@gmail.com', '305-627-4334')",
-    // "INSERT INTO customers (name, email, phone_number) VALUES ('Ivan Mathis', 'mathis@gmail.com', '505-987-1235')",
-    "INSERT INTO customers (name, email, phone_number) VALUES ('Sahlah Nadwa', 'nadwa@gmail.com', '917-831-6682')",
+//Inserting values into table
+  
+// pool.query(
+//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Canelo Alvares', 'alvares@gmail.com', '305-627-4334')",
+//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Ivan Mathis', 'mathis@gmail.com', '505-987-1235')",
+//     "INSERT INTO customers (name, email, phone_number) VALUES ('Sahlah Nadwa', 'nadwa@gmail.com', '917-831-6682')",
+//     (error, result) => {
+//       if (error) {
+//         console.log("Error:", error);
+//       } else {
+//         console.log("Data inserted successfully:", result);
+//       }
+//     }
+//   );
+
+  pool.query(
+    "INSERT INTO books (book_name, description, price, quatity) VALUES ('The Idiot', 'Novel by the 19th-century Russian author Fyodor Dostoevsky', 15.39, 20)",
     (error, result) => {
       if (error) {
         console.log("Error:", error);
       } else {
         console.log("Data inserted successfully:", result);
       }
-      pool.end();
     }
   );
 
-//Inserting values into table
-  
+//   pool.query(
+//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Canelo Alvares', 'alvares@gmail.com', '305-627-4334')",
+//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Ivan Mathis', 'mathis@gmail.com', '505-987-1235')",
+//     "INSERT INTO customers (name, email, phone_number) VALUES ('Sahlah Nadwa', 'nadwa@gmail.com', '917-831-6682')",
+//     (error, result) => {
+//       if (error) {
+//         console.log("Error:", error);
+//       } else {
+//         console.log("Data inserted successfully:", result);
+//       }
+//     }
+//   );
+
+//   pool.query(
+//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Canelo Alvares', 'alvares@gmail.com', '305-627-4334')",
+//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Ivan Mathis', 'mathis@gmail.com', '505-987-1235')",
+//     "INSERT INTO customers (name, email, phone_number) VALUES ('Sahlah Nadwa', 'nadwa@gmail.com', '917-831-6682')",
+//     (error, result) => {
+//       if (error) {
+//         console.log("Error:", error);
+//       } else {
+//         console.log("Data inserted successfully:", result);
+//       }
+//     }
+//   );
 
 // pool.query("SELECT * FROM customers", (error, result) => {
 //     try {

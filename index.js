@@ -36,14 +36,28 @@ const pool = new Pool ({
 
 // create 'order_items' table
 
-// pool.query("CREATE TABLE order_items(ordered_books_id BIGSERIAL PRIMARY KEY, order_id BIGINT NOT NULL, book_id BIGINT NOT NULL, quantity INT NOT NULL, price DECIMAL(4,2) NOT NULL, FOREIGN KEY (order_id) REFERENCES orders(order_id), FOREIGN KEY (book_id) REFERENCES books(product_id))", (error, result) => {
-//     console.log(error, result);
-//     pool.end();
-//   });
+pool.query(
+    "INSERT INTO customers (name, email, phone_number) VALUES ('Marie Burchell', 'burchell@gmail.com', '202-918-2132')",
+    (error, result) => {
+      if (error) {
+        console.log("Error:", error);
+      } else {
+        console.log("Data inserted successfully:", result);
+      }
+      pool.end();
+    }
+  );
 
 //Inserting values into table
   
 
+// pool.query("SELECT * FROM customers", (error, result) => {
+//     try {
+//         console.log("Querry results ===> ", result.rows)
+//     } catch (error) {
+//         console.error("Error executing query:", error)
+//     }
+// })
 
 
 

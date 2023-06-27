@@ -37,7 +37,9 @@ const pool = new Pool ({
 // create 'order_items' table
 
 pool.query(
-    "INSERT INTO customers (name, email, phone_number) VALUES ('Marie Burchell', 'burchell@gmail.com', '202-918-2132')",
+    // "INSERT INTO customers (name, email, phone_number) VALUES ('Canelo Alvares', 'alvares@gmail.com', '305-627-4334')",
+    // "INSERT INTO customers (name, email, phone_number) VALUES ('Ivan Mathis', 'mathis@gmail.com', '505-987-1235')",
+    "INSERT INTO customers (name, email, phone_number) VALUES ('Sahlah Nadwa', 'nadwa@gmail.com', '917-831-6682')",
     (error, result) => {
       if (error) {
         console.log("Error:", error);

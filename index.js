@@ -75,10 +75,51 @@ const pool = new Pool ({
 //     }
 //   );
 
-  pool.query(
-    // "INSERT INTO order_items (order_id, book_id, quantity, price) VALUES (1, 1, 1, 15.39)",
-    // "INSERT INTO order_items (order_id, book_id, quantity, price) VALUES (1, 2, 1, 15.39)",
-    "INSERT INTO order_items (order_id, book_id, quantity, price) VALUES (4, 4, 1, 18.00)",
+//   pool.query(
+//     // "INSERT INTO order_items (order_id, book_id, quantity, price) VALUES (1, 1, 1, 15.39)",
+//     // "INSERT INTO order_items (order_id, book_id, quantity, price) VALUES (1, 2, 1, 15.39)",
+//     "INSERT INTO order_items (order_id, book_id, quantity, price) VALUES (4, 4, 1, 18.00)",
+//     (error, result) => {
+//       if (error) {
+//         console.log("Error:", error);
+//       } else {
+//         console.log("Data inserted successfully:", result);
+//       }
+//     }
+//   );
+
+
+//   pool.query(
+//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Canelo Alvares', 'alvares@gmail.com', '305-627-4334')",
+//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Ivan Mathis', 'mathis@gmail.com', '505-987-1235')",
+//     "INSERT INTO customers (name, email, phone_number) VALUES ('Sahlah Nadwa', 'nadwa@gmail.com', '917-831-6682')",
+//     (error, result) => {
+//       if (error) {
+//         console.log("Error:", error);
+//       } else {
+//         console.log("Data inserted successfully:", result);
+//       }
+//     }
+//   );
+
+//   pool.query(
+//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Canelo Alvares', 'alvares@gmail.com', '305-627-4334')",
+//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Ivan Mathis', 'mathis@gmail.com', '505-987-1235')",
+//     "INSERT INTO customers (name, email, phone_number) VALUES ('Sahlah Nadwa', 'nadwa@gmail.com', '917-831-6682')",
+//     (error, result) => {
+//       if (error) {
+//         console.log("Error:", error);
+//       } else {
+//         console.log("Data inserted successfully:", result);
+//       }
+//     }
+//   );
+
+
+//create inner joins
+//joined customers and orders tables
+pool.query(
+    "SELECT * FROM customers INNER JOIN orders ON customers.customer_id = orders.customer_id",
     (error, result) => {
       if (error) {
         console.log("Error:", error);
@@ -88,31 +129,6 @@ const pool = new Pool ({
     }
   );
 
-//   pool.query(
-//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Canelo Alvares', 'alvares@gmail.com', '305-627-4334')",
-//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Ivan Mathis', 'mathis@gmail.com', '505-987-1235')",
-//     "INSERT INTO customers (name, email, phone_number) VALUES ('Sahlah Nadwa', 'nadwa@gmail.com', '917-831-6682')",
-//     (error, result) => {
-//       if (error) {
-//         console.log("Error:", error);
-//       } else {
-//         console.log("Data inserted successfully:", result);
-//       }
-//     }
-//   );
-
-//   pool.query(
-//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Canelo Alvares', 'alvares@gmail.com', '305-627-4334')",
-//     // "INSERT INTO customers (name, email, phone_number) VALUES ('Ivan Mathis', 'mathis@gmail.com', '505-987-1235')",
-//     "INSERT INTO customers (name, email, phone_number) VALUES ('Sahlah Nadwa', 'nadwa@gmail.com', '917-831-6682')",
-//     (error, result) => {
-//       if (error) {
-//         console.log("Error:", error);
-//       } else {
-//         console.log("Data inserted successfully:", result);
-//       }
-//     }
-//   );
 
 // pool.query("SELECT * FROM customers", (error, result) => {
 //     try {

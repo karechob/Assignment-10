@@ -130,16 +130,30 @@ const pool = new Pool ({
 //   );
 
 //joined books and orders tables
+// pool.query(
+//     "SELECT * FROM books INNER JOIN orders ON books.product_id = orders.customer_id",
+//     (error, result) => {
+//       if (error) {
+//         console.log("Error:", error);
+//       } else {
+//         console.log("Data inserted successfully:", result);
+//       }
+//     }
+//   );
+
+//joined orders and order_id tables
 pool.query(
-    "SELECT * FROM books INNER JOIN orders ON books.product_id = orders.customer_id",
+    "SELECT * FROM orders INNER JOIN order_items ON orders.order_id = order_items.order_id",
     (error, result) => {
       if (error) {
         console.log("Error:", error);
       } else {
-        console.log("Data inserted successfully:", result);
+        console.log("Data retrieved successfully:", result.rows);
       }
+      pool.end();
     }
   );
+  
 
 //joined orders tables and order_items tables
 

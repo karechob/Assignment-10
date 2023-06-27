@@ -51,9 +51,34 @@ const pool = new Pool ({
 //     }
 //   );
 
+//   pool.query(
+//     // "INSERT INTO books (book_name, description, price, quatity) VALUES ('The Idiot', 'Novel by the 19th-century Russian author Fyodor Dostoevsky', 15.39, 20)",
+//     "INSERT INTO books (book_name, description, price, quatity) VALUES ('Bubblegum', 'A rare masterwork of provocative social (and self-) awareness and intimate emotional power', 18.00, 30)",
+//     (error, result) => {
+//       if (error) {
+//         console.log("Error:", error);
+//       } else {
+//         console.log("Data inserted successfully:", result);
+//       }
+//     }
+//   );
+
+//   pool.query(
+//     // "INSERT INTO books (book_name, description, price, quatity) VALUES ('The Idiot', 'Novel by the 19th-century Russian author Fyodor Dostoevsky', 15.39, 20)",
+//     "INSERT INTO books (book_name, description, price, quatity) VALUES ('Bubblegum', 'A rare masterwork of provocative social (and self-) awareness and intimate emotional power', 18.00, 30)",
+//     (error, result) => {
+//       if (error) {
+//         console.log("Error:", error);
+//       } else {
+//         console.log("Data inserted successfully:", result);
+//       }
+//     }
+//   );
+
   pool.query(
-    // "INSERT INTO books (book_name, description, price, quatity) VALUES ('The Idiot', 'Novel by the 19th-century Russian author Fyodor Dostoevsky', 15.39, 20)",
-    "INSERT INTO books (book_name, description, price, quatity) VALUES ('Bubblegum', 'A rare masterwork of provocative social (and self-) awareness and intimate emotional power', 18.00, 30)",
+    // "INSERT INTO order_items (order_id, book_id, quantity, price) VALUES (1, 1, 1, 15.39)",
+    // "INSERT INTO order_items (order_id, book_id, quantity, price) VALUES (1, 2, 1, 15.39)",
+    "INSERT INTO order_items (order_id, book_id, quantity, price) VALUES (4, 4, 1, 18.00)",
     (error, result) => {
       if (error) {
         console.log("Error:", error);

@@ -15,11 +15,13 @@ const pool = new Pool ({
 //create 'customers' table
 pool.query("CREATE TABLE customers(customer_id BIGSERIAL PRIMARY KEY, name VARCHAR(50) NOT NULL, email VARCHAR(150) NOT NULL, phone_number VARCHAR(50) NOT NULL)", (error, result) => {
     console.log(error, result)
+    //pool.end()
+})
+//create 'books' table
+pool.query("CREATE TABLE books(product_id BIGSERIAL PRIMARY KEY, book_name VARCHAR(50) NOT NULL, description VARCHAR(150) NOT NULL, price DEC(4,2) NOT NULL, quatity INT NOT NULL)", (error, result) => {
+    console.log(error, result)
     pool.end()
 })
-
-
-//create 'books' table
 //create 'orders' table
 //create 'order_items' table
 

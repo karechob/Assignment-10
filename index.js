@@ -10,6 +10,9 @@ const pool = new Pool ({
     password: "",
 })
 
+//Create Tables
+//
+
 pool.query("SELECT * FROM customers", (error, result) => {
     try {
         console.log("Querry results ===> ", result.rows)
@@ -18,6 +21,12 @@ pool.query("SELECT * FROM customers", (error, result) => {
     }
 })
 
-app.get('/', (req, res) => {
-    res.send('hello world')
-  })
+
+
+
+
+
+
+// app.get('/', (req, res) => {
+//     res.send('hello world')
+//   })

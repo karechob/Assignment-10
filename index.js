@@ -118,8 +118,20 @@ const pool = new Pool ({
 
 //create inner joins
 //joined customers and orders tables
+// pool.query(
+//     "SELECT * FROM customers INNER JOIN orders ON customers.customer_id = orders.customer_id",
+//     (error, result) => {
+//       if (error) {
+//         console.log("Error:", error);
+//       } else {
+//         console.log("Data inserted successfully:", result);
+//       }
+//     }
+//   );
+
+//joined books and orders tables
 pool.query(
-    "SELECT * FROM customers INNER JOIN orders ON customers.customer_id = orders.customer_id",
+    "SELECT * FROM books INNER JOIN orders ON books.product_id = orders.customer_id",
     (error, result) => {
       if (error) {
         console.log("Error:", error);
@@ -128,6 +140,8 @@ pool.query(
       }
     }
   );
+
+//joined orders tables and order_items tables
 
 
 // pool.query("SELECT * FROM customers", (error, result) => {

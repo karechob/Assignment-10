@@ -52,7 +52,8 @@ const pool = new Pool ({
 //   );
 
   pool.query(
-    "INSERT INTO books (book_name, description, price, quatity) VALUES ('The Idiot', 'Novel by the 19th-century Russian author Fyodor Dostoevsky', 15.39, 20)",
+    // "INSERT INTO books (book_name, description, price, quatity) VALUES ('The Idiot', 'Novel by the 19th-century Russian author Fyodor Dostoevsky', 15.39, 20)",
+    "INSERT INTO books (book_name, description, price, quatity) VALUES ('Bubblegum', 'A rare masterwork of provocative social (and self-) awareness and intimate emotional power', 18.00, 30)",
     (error, result) => {
       if (error) {
         console.log("Error:", error);

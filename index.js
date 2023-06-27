@@ -23,14 +23,16 @@ const pool = new Pool ({
 //     //pool.end()
 // })
 //create 'orders' table
-pool.query("CREATE TABLE orders(order_id BIGSERIAL PRIMARY KEY, customer_id BIGSERIAL REFERENCES customers(customer_id), order_date TIMESTAMP NOT NULL, total_amount DECIMAL(4,2) NOT NULL)", (error, result) => {
+// pool.query("CREATE TABLE orders(order_id BIGSERIAL PRIMARY KEY, customer_id BIGSERIAL REFERENCES customers(customer_id), order_date TIMESTAMP NOT NULL, total_amount DECIMAL(4,2) NOT NULL)", (error, result) => {
+//     console.log(error, result);
+//     pool.end();
+//   });  
+//create 'order_items' table
+pool.query("CREATE TABLE order_items(ordered_books_id BIGSERIAL PRIMARY KEY, order_id BIGINT NOT NULL, book_id BIGINT NOT NULL, quantity INT NOT NULL, price DECIMAL(4,2) NOT NULL, FOREIGN KEY (order_id) REFERENCES orders(order_id), FOREIGN KEY (book_id) REFERENCES books(product_id))", (error, result) => {
     console.log(error, result);
     pool.end();
-  });  
-//create 'order_items' table
-// pool.query("CREATE TABLE order_items(ordered_books_id BIGSERIAL PRIMARY KEY, order_id BIGSERIAL FOREIGN KEY NOT NULL, book_id BIGSERIAL FOREIGN KEY NOT NULL, quantity INT NOT NULL, price DEC(4,2) NOT NULL)", (error, result) => {
-//     console.log(error, result)
-// })
+  });
+  
 
 
 

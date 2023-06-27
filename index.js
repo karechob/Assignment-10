@@ -1,10 +1,23 @@
 const {Pool} = require("pg")
-const { password } = require("pg/lib/defaults")
+const express = require('express')
+const app = express()
 
 const pool = new Pool ({
     host: "localhost",
     port: 5432,
-    database: "",
-    user: "",
+    database: "assignment10",
+    user: "mirandakarecho",
     password: "",
 })
+
+pool.query("SELECT * FROM customers", (error, result) => {
+    try {
+        console.log("Querry results ===> ", result.rows)
+    } catch (error) {
+        console.error("Error executing query:", error)
+    }
+})
+
+app.get('/', (req, res) => {
+    res.send('hello world')
+  })

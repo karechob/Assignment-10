@@ -10,16 +10,44 @@ const pool = new Pool ({
     password: "",
 })
 
-//Create Tables
-//
+//Creating Tables
 
-pool.query("SELECT * FROM customers", (error, result) => {
-    try {
-        console.log("Querry results ===> ", result.rows)
-    } catch (error) {
-        console.error("Error executing query:", error)
-    }
+//create 'customers' table
+pool.query("CREATE TABLE customers(customer_id BIGSERIAL PRIMARY KEY, name VARCHAR(50) NOT NULL, email VARCHAR(150) NOT NULL, phone_number VARCHAR(50) NOT NULL)", (error, result) => {
+    console.log(error, result)
+    pool.end()
 })
+
+
+//create 'books' table
+//create 'orders' table
+//create 'order_items' table
+
+
+
+
+
+
+
+
+
+
+// pool.query("SELECT * FROM customers", (error, result) => {
+//     try {
+//         console.log("Querry results ===> ", result.rows)
+//     } catch (error) {
+//         console.error("Error executing query:", error)
+//     }
+// })
+
+
+// pool.query("SELECT * FROM customers", (error, result) => {
+//     try {
+//         console.log("Querry results ===> ", result.rows)
+//     } catch (error) {
+//         console.error("Error executing query:", error)
+//     }
+// })
 
 
 

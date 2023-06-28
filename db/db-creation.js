@@ -143,6 +143,7 @@ pool.query(
   );
 
 //joined orders and order_id tables
+
 pool.query(
     "SELECT * FROM orders INNER JOIN order_items ON orders.order_id = order_items.order_id",
     (error, result) => {
@@ -155,32 +156,7 @@ pool.query(
     }
   );
   
-
 // joined orders tables and order_items tables
 
-pool.query("SELECT * FROM customers", (error, result) => {
-    try {
-        console.log("Querry results ===> ", result.rows)
-    } catch (error) {
-        console.error("Error executing query:", error)
-    }
-})
-
-pool.query("SELECT * FROM customers", (error, result) => {
-    try {
-        console.log("Querry results ===> ", result.rows)
-    } catch (error) {
-        console.error("Error executing query:", error)
-    }
-})
-
-
-pool.query("SELECT * FROM customers", (error, result) => {
-    try {
-        console.log("Querry results ===> ", result.rows)
-    } catch (error) {
-        console.error("Error executing query:", error)
-    }
-})
 
 pool.end()
